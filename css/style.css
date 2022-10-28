@@ -1,0 +1,78 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+
+}
+
+.logo-box {
+    text-align: center;
+    padding: 1.5rem 0;
+}
+
+.logo-box img {
+    width: 250px;
+}
+
+.new-task {
+    text-align: center;
+}
+
+.new-task label {
+    display: none;
+}
+
+.new-task input {
+    padding: .5rem 1rem;
+    border-radius: 10px;
+}
+
+.new-task button {
+    padding: .5rem 1rem;
+    border-radius: 10px;
+}
+
+.tasks-container {
+    width: 600px;
+    margin: 0 auto;
+    background-color: lightblue;
+    margin-top: 2rem;
+    padding: 3rem;
+    border-radius: 10px;
+}
+
+.tasks-container ul {
+    width: 100%;
+    list-style: none;
+}
+
+.tasks-container li {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: .5rem 0;
+    border-bottom: 1px solid black;
+}
+
+.task-delete {
+    color: red;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.task-done {
+    text-decoration: line-through;
+}
+
+.error {
+    color: red;
+}

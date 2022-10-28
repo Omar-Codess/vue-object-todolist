@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="css/style.css" />
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app" class="container">
+      <header>
+        <div class="logo-box">
+          <img src="img/logo.png" alt="Logo di Boolean" />
+        </div>
+        <div class="new-task">
+          <label for="task-text">Nuovo task</label>
+          <input
+            type="text"
+            id="task-text"
+            placeholder="Inserisci nuovo task"
+            v-model.trim="newTodo"
+            @keyup.enter="addNewTodo"
+          />
+          <button @click="addNewTodo">Inserisci</button>
+          <div class="error" v-if="hasError">
+            <small>Il task deve essere lungo almeno di 5 caratteri</small>
+          </div>
+        </div>
+      </header>
+
+      <div class="tasks-container">
+        <p v-if="todos.length === 0">Per oggi hai finito! :D</p>
+        <ul v-else>
+          <li v-for="(thisTodo, index) in todos">
+            <span
+              :class="{ 'task-done': thisTodo.done }"
+              @click="changeDone(index)"
+            >
+              {{ thisTodo.text }}
+            </span>
+            <span class="task-delete" @click="removeTodo(index)">&cross;</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
